@@ -1,6 +1,3 @@
-// process.stdin
-//   .pipe(process.stdout)
-
 
 import { Readable, Transform, Writable } from 'node:stream'
 
