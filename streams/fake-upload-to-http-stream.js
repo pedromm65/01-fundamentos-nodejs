@@ -7,7 +7,7 @@ class OneToHundredStram extends Readable {
     const  i = this.index++
     setTimeout(() => {
       
-      if(i >= 100) {
+      if(i > 5) {
         this.push(null)
       } else {
         const buf = Buffer.from(String(i))
@@ -20,4 +20,8 @@ class OneToHundredStram extends Readable {
 fetch('http://localhost:3334', {
   method: 'POST',
   body: new OneToHundredStram(),
+}).then(response => {
+  return response.text()
+}).then(data => {
+  console.log(data)
 })
